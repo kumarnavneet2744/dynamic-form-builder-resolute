@@ -1,0 +1,18 @@
+.optBtn button{
+    background-color: rgb(117, 44, 131);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 5px;
+    margin:5px   
+}
+
+
+@media (max-width: 768px) {
+    input[type="text"],
+    textarea,
+    select,
+    button {
+      font-size: 14px;
+    }
+  }

@@ -1,0 +1,60 @@
+
+   <div class="form-field" [formGroup]="form">
+    <div class="form-group">
+      <!-- Label for the field -->
+      <label>{{ field.label }}</label>
+  
+      <!-- Text Input -->
+      <input
+        *ngIf="field.type === 'text'"
+        type="text"
+        [formControlName]="field.label"
+        [placeholder]="field.placeholder"
+        class="form-control"
+        [attr.required]="isRequired"
+      />
+  
+      <!-- Textarea -->
+      <textarea
+        *ngIf="field.type === 'textarea'"
+        [formControlName]="field.label"
+        [placeholder]="field.placeholder"
+        class="form-control"
+      ></textarea>
+  
+      <!-- Dropdown -->
+      <select
+        *ngIf="field.type === 'dropdown'"
+        [formControlName]="field.label"
+        class="form-control"
+      >
+        <option *ngFor="let option of ['Option 1', 'Option 2', 'Option 3']" [value]="option">{{ option }}</option>
+      </select>
+  
+      <!-- Checkbox -->
+      <div class="checkbox-group" *ngIf="field.type === 'checkbox'">
+        <label>
+          <input type="checkbox" [formControlName]="field.label" />
+          {{ field.label }}
+        </label>
+      </div>
+  
+      <!-- Radio Buttons -->
+      <div class="radio-group" *ngIf="field.type === 'radio'">
+        <label *ngFor="let option of ['Option 1', 'Option 2', 'Option 3']">
+          <input type="radio" [formControlName]="field.label" [value]="option" />
+          {{ option }}
+        </label>
+      </div>
+  
+      <!-- Remove Field Button -->
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="removeField(field)"
+      >
+        Remove Field
+      </button>
+    </div>
+  </div>
+  

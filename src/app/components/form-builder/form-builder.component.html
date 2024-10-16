@@ -1,0 +1,21 @@
+
+   <div class="form-container">
+    <h2>Dynamic Form Builder</h2>
+    <div class="optBtn">
+      <button (click)="addField('text')">Add Text Input</button>
+      <button (click)="addField('textarea')">Add Textarea</button>
+      <button (click)="addField('dropdown')">Add Dropdown</button>
+      <button (click)="addField('checkbox')">Add Checkbox</button>
+      <button (click)="addField('radio')">Add Radio Button</button>
+    </div>
+  
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+      <div *ngFor="let field of fields; let i = index">
+        <app-form-field [field]="field" [form]="form" (remove)="removeField(i)"></app-form-field>
+      </div>
+      <button type="submit" [disabled]="form.invalid" >Submit</button>
+    </form>
+
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+  </div>
+  

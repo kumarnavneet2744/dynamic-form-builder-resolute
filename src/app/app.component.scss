@@ -1,0 +1,25 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-field {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  mat-icon-button {
+    margin-left: 10px;
+  }
+  
+  mat-error {
+    color: red;
+    font-size: 12px;
+  }
+  
